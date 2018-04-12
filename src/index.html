@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mysolution</title>
+  <base href="/">
+  <!-- v1 -->
+  <link rel="stylesheet" href="v1/bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="v1/bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="v1/app.css">
+  <script src="v1/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body >
+   <!-- v1 -->
+    <ul class="menu">
+        <li><a href="#!/view1">view1</a></li>
+        <li><a href="#!/view2">view2</a></li>
+      </ul>
+    
+      <!--[if lt IE 7]>
+          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+    
+      <div ng-view></div>
+    
+      <div>Angular seed app: v<span app-version></span></div>
+       <!-- v2 -->
+  <!-- <app-root></app-root> -->
+   <!-- v1 -->
+  <script src="v1/bower_components/angular/angular.js"></script>
+  <script src="v1/bower_components/angular-route/angular-route.js"></script>
+  <script src="v1/app.js"></script>
+  <script src="v1/view1/view1.js"></script>
+  <script src="v1/view2/view2.js"></script>
+  <script src="v1/components/version/version.js"></script>
+  <script src="v1/components/version/version-directive.js"></script>
+  <script src="v1/components/version/interpolate-filter.js"></script>
+</body>
+</html>
