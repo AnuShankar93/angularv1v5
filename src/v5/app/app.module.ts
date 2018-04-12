@@ -4,14 +4,7 @@ import { UpgradeModule, downgradeComponent } from '@angular/upgrade/static'; // 
 
 
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu.component';
-declare var angular: any;
-
-angular.module('myApp')
-  .directive(
-    'app-root',
-    downgradeComponent({component: AppComponent})
-);
+import { MenuComponent } from './menu/menu.component';
 
 
 @NgModule({
@@ -23,15 +16,12 @@ angular.module('myApp')
     BrowserModule,
     UpgradeModule
   ],
-  entryComponents: [
-    AppComponent
-  ],
   providers: [],
- // bootstrap: [AppComponent] // removed for upgrade module
+  bootstrap: [AppComponent] // removed for upgrade module
 })
 export class AppModule {
   constructor(private upgrade: UpgradeModule) {}
-  ngDoBootstrap() {
-    this.upgrade.bootstrap(document.body, ['myApp'], { strictDi: true });
-  }
+  // ngDoBootstrap() {
+  //   this.upgrade.bootstrap(document.body, ['myApp'], { strictDi: true });
+  // }
 }

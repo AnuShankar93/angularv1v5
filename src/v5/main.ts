@@ -8,5 +8,7 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.log(err));
+platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
+  const upgrade = (<any>ref.instance).upgrade;
+  upgrade.bootstrap(document.body, ['myApp'], { strictDi: true });
+});
