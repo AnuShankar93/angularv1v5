@@ -5,9 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import {UrlHandlingStrategy} from '@angular/router';
 
 import { AppComponent } from './app.component';
+
 import { DemoComponent } from './demo/demo.component';
 export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
-  shouldProcessUrl(url) { return url.toString().startsWith('/demo'); }
+  shouldProcessUrl(url) {
+     return url.toString().startsWith('/demo') || url.toString().startsWith('/dummy');
+ }
   extract(url) { return url; }
   merge(url, whole) { return url; }
 }
@@ -21,7 +24,7 @@ export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
   imports: [
     BrowserModule,
     UpgradeModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [{ provide: UrlHandlingStrategy, useClass: Ng1Ng2UrlHandlingStrategy }],
   bootstrap: [AppComponent] // removed for upgrade module
