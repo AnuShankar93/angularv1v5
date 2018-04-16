@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
 export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
   shouldProcessUrl(url) {
-     return url.toString().startsWith('/demo') || url.toString().startsWith('/dummy');
+     return url.toString().startsWith('/demo') || url.toString().startsWith('/dummy') || url.toString() === '/';
  }
   extract(url) { return url; }
   merge(url, whole) { return url; }

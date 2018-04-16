@@ -5,6 +5,7 @@ import { DummyModule } from './dummy/dummy.module';
 
 
 const routes: Routes = [
+  {path: '', component: DemoComponent},
   {path: 'demo', component: DemoComponent},
   {path: 'dummy', loadChildren : () => DummyModule}
 ];
