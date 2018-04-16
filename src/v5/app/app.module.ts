@@ -7,19 +7,28 @@ import {UrlHandlingStrategy} from '@angular/router';
 import { AppComponent } from './app.component';
 
 import { DemoComponent } from './demo/demo.component';
+import { NgtempComponent } from './ngtemp/ngtemp.component';
 export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
   shouldProcessUrl(url) {
+    console.log('S', url);
      return url.toString().startsWith('/demo') || url.toString().startsWith('/dummy') || url.toString() === '/';
  }
-  extract(url) { return url; }
-  merge(url, whole) { return url; }
+  extract(url) {
+    console.log('E', url);
+    return url;
+  }
+  merge(url, whole) {
+    console.log('M', url, 'W', whole);
+    return url;
+  }
 }
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DemoComponent
+    DemoComponent,
+    NgtempComponent
   ],
   imports: [
     BrowserModule,
